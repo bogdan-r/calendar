@@ -1,0 +1,19 @@
+<div class="b-calendar-table__cell__content <% if(!currentMonth){ %>b-calendar-table__cell__content__beyond<% } %>
+<% if(isToday){ %>b-calendar-table__cell__content__today<% } %> ">
+    <span class="b-calendar-table__cell__day"><%= day %></span>
+    <div class="js-note-item"></div>
+    <div class="b-calendar-table__cell__setting">
+        <ul class="b-calendar-table__cell__setting__list">
+            <% if(!note){%>
+            <li class="b-calendar-table__cell__setting__item"><a href="#" class="js-new_note b-calendar-table__cell__setting__item__link">Новая заметка</a></li>
+            <%}else{%>
+            <li class="b-calendar-table__cell__setting__item"><a href="#" class="js-show-note b-calendar-table__cell__setting__item__link">Посмотреть</a></li>
+            <li class="b-calendar-table__cell__setting__item"><a href="#" class="js-edit-note b-calendar-table__cell__setting__item__link">Редактировать</a></li>
+            <li class="b-calendar-table__cell__setting__item"><a href="#" class="js-destroy-note b-calendar-table__cell__setting__item__link">Удалить</a></li>
+            <%}%>
+        </ul>
+    </div>
+    <div class="js-note-additional b-calendar-table__cell__additional"></div>
+</div>
+
+<!--<% if(!currentMonth){%>b-calendar-table__cell_not-current<%}%>-->

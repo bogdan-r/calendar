@@ -1,30 +1,117 @@
-/**
- * importer.less
- *
- * By default, new Sails projects are configured to compile this file
- * from LESS to CSS.  Unlike CSS files, LESS files are not compiled and
- * included automatically unless they are imported below.
- *
- * The LESS files imported below are compiled and included in the order
- * they are listed.  Mixins, variables, etc. should be imported first
- * so that they can be accessed by subsequent LESS stylesheets.
- *
- * (Just like the rest of the asset pipeline bundled in Sails, you can
- * always omit, customize, or replace this behavior with SASS, SCSS,
- * or any other Grunt tasks you like.)
- */
+.b-note-form{
+  position: absolute;
+  top: -9px;
+  left: -9px;
+  background: #eee;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  padding: 8px;
+  width: 200px;
+  z-index: 3;
+}
+.b-note-form__close{
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
 
 
 
-// For example:
-//
-// @import 'variables/colors.less';
-// @import 'mixins/foo.less';
-// @import 'mixins/bar.less';
-// @import 'mixins/baz.less';
-//
-// @import 'styleguide.less';
-// @import 'pages/login.less';
-// @import 'pages/signup.less';
-//
-// etc.
+.b-calendar__current-date{
+  font-size: 18px;
+  line-height: 69px;
+  font-weight: bold;
+  text-align: right;
+  float: left;
+  margin-left: 20px;
+}
+.b-calendar-table{
+  thead th{
+    width: 14.30%;
+  }
+}
+.b-calendar-table__cell{
+  height: 100px;
+  &.b-calendar-table__cell_not-current{
+    .b-calendar-table__cell__day{
+      color: #ccc;
+    }
+  }
+}
+.b-calendar-table__cell__content{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  &.b-calendar-table__cell__content__beyond{
+    .b-calendar-table__cell__day{
+      color: #ddd;
+    }
+    .b-calendar-table__cell__note{
+      background: #aaa;
+    }
+  }
+  &.b-calendar-table__cell__content__today{
+    .b-calendar-table__cell__day{
+      color: #a94442;
+    }
+    .b-calendar-table__cell__note{
+      background: #a94442;
+    }
+  }
+}
+
+.b-calendar-table__cell__day{
+  font-size: 12px;
+  color: #444;
+}
+.b-calendar-table__cell__note{
+  display: inline-block;
+  font-size: 11px;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 3px;
+  background: #777;
+  padding: .2em .6em .3em;
+}
+.b-calendar-table__cell__setting{
+  transition: opacity 0.3s ease;
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  box-sizing: content-box;
+  overflow: hidden;
+  opacity: 0;
+  z-index: 1;
+  &:hover{
+    opacity: 1
+  }
+}
+.b-calendar-table__cell__setting__list{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.b-calendar-table__cell__setting__item{
+  font-size: 11px;
+  color: #fff;
+  margin-bottom: 3px;
+}
+.b-calendar-table__cell__setting__item__link{
+  color: #fff;
+  &:hover{
+    color: #fff;
+  }
+}
+
+.b-calendar-table__cell__additional{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}

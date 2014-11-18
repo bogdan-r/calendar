@@ -1,0 +1,15 @@
+<form action="" class="js-add-note-form b-note-form">
+    <input type="hidden" name="date" value="<%= date %>"/>
+    <span class="b-note-form__close js-note-form-close">
+        &times;
+    </span>
+    <div class="form-group">
+        <label for="noteFormAdd_title">Заголовок</label>
+        <input type="text" class="form-control" name="title" id="noteFormAdd_title">
+    </div>
+    <div class="form-group">
+        <label for="noteFormAdd_text">Текст</label>
+        <textarea class="form-control" id="noteFormAdd_text" name="text" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-default">Создать заметку</button>
+</form>
