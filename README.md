@@ -1,3 +1,5 @@
-# calendar
+# Календарь
 
-a [Sails](http://sailsjs.org) application
+Посмотреть результат можно [здесь](http://allcrash:3000)
+
+Ассеты соответственно лежат в папке `/assets`
