@@ -47,12 +47,13 @@ App.Views.Calendar.CalendarCellView = Backbone.View.extend({
 
     showNote : function(e){
         e.preventDefault();
-        console.log(this.model.toJSON())
+        this.hideAdditions();
         this.$('.js-note-additional').html(this.showNoteFormTemplate(this.model.toJSON()))
     },
 
     editNoteForm : function(e){
         e.preventDefault();
+        this.hideAdditions();
         var params = this.model.toJSON();
         params.date = moment(params.date).format('YYYY-MM-DD')
         this.$('.js-note-additional').html(this.editNoteFormTemplate(params))
