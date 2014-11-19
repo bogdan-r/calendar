@@ -33,17 +33,19 @@ App.Views.Calendar.CalendarView = Backbone.View.extend({
     buildDates : function(){
         var firstOfSelectedMonth = moment(['01', this.selectedDateMonth, this.selectedDateYear].join('-'), 'DD-MM-YYYY');
         var daysInSelectedMonth = this.currentMomentDate.daysInMonth();
-        var daysBeforeSelectedMonth = firstOfSelectedMonth.day() - 1
+        var daysBeforeSelectedMonth = firstOfSelectedMonth.day() - 1;
+        daysBeforeSelectedMonth = daysBeforeSelectedMonth < 0 ? 6 : daysBeforeSelectedMonth;
 
         var firstDayBeforeCurrentMonth = parseInt(
             moment(firstOfSelectedMonth)
-                .subtract(firstOfSelectedMonth.day() - 1, 'days')
+                .subtract(daysBeforeSelectedMonth, 'days')
                 .format('DD')
             , 10);
 
         var params = {};
         var momentDate = null;
-        this.dates = []
+        this.dates = [];
+
         for(var i = 0; i < this.COUNT_RENDER_DAYS; i++){
             if(i < daysBeforeSelectedMonth){
                 momentDate = moment(
